@@ -1,17 +1,15 @@
 <script>
+import LightLogo from "@/Pages/Auth/Elements/LightLogo.vue";
+
 export default {
-    name: "AuthLogoInfo"
+    name: "AuthLogoInfo",
+    components: {LightLogo}
 }
 </script>
 
 <template>
     <div class="logo">
-        <img
-            draggable="false"
-            class="logo"
-            alt="logo"
-            src="/assets/svg/light-logo.svg"
-        >
+        <LightLogo class="logo-component"/>
         <p class="info"><span class="head">Anonym —</span> свободная и анонимная социальная сеть.</p>
     </div>
 </template>

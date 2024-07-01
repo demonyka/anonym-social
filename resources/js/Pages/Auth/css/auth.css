@@ -49,6 +49,9 @@ form.auth div.inputs input:hover {
     flex-direction: row;
     justify-content: space-between;
     width: 750px;
+    height: 380px;
+    max-height: 380px;
+    min-height: 380px;
 }
 
 .auth.block div.logo {
@@ -58,7 +61,7 @@ form.auth div.inputs input:hover {
     gap: 20px;
 }
 
-.auth.block div.logo img.logo {
+.auth.block div.logo .logo-component {
     width: 160px;
     height: 160px;
     user-select: none;

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-class AuthController
+use App\Http\Controllers\Controller;
+
+class AuthController extends Controller
 {
     public function view()
     {

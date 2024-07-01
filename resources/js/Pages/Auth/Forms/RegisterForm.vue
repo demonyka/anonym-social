@@ -3,21 +3,22 @@ import PrimaryButton from "@/Elements/PrimaryButton.vue";
 import {useForm} from "@inertiajs/vue3";
 
 export default {
-    name: "LoginForm",
+    name: "RegisterForm",
     components: {
         PrimaryButton
     },
     data() {
         return {
             form: useForm({
-                username: '',
-                password: ''
+                login: '',
+                password: '',
+                password_confirmation: ''
             })
         }
     },
     methods: {
         formSubmit() {
-            this.form.post(route('auth.login'))
+
         }
     },
 }
@@ -25,27 +26,33 @@ export default {
 
 <template>
     <form id="form-auth" class="auth" @submit.prevent="formSubmit">
-        <h1>Вход</h1>
+        <h1>Создание аккаунта</h1>
         <div class="inputs">
             <input
                 @focus="$emit('focused')"
-                v-model="form.username"
+                v-model="form.login"
                 placeholder="Логин"
-                :readonly="form.processing"
+                required
             >
             <input
                 @focus="$emit('focused')"
                 v-model="form.password"
                 placeholder="Пароль"
+                required
                 type="password"
-                :readonly="form.processing"
             >
-            <PrimaryButton type="submit" :disabled="form.processing">
-                Войти
+            <input
+                @focus="$emit('focused')"
+                v-model="form.password_confirmation"
+                placeholder="Подтвердите пароль"
+                required
+                type="password"
+            >
+            <PrimaryButton type="submit">
+                Создать аккаунт
             </PrimaryButton>
             <div class="inputs" style="gap: 5px">
-                <button :disabled="form.processing" type="button" class="text-button" @click="$emit('register')">Создать аккаунт</button>
-                <button :disabled="form.processing" type="button" class="text-button">Восстановить доступ</button>
+                <button type="button" class="text-button" @click="$emit('login')">Войти</button>
             </div>
         </div>
     </form>
