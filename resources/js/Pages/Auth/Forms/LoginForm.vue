@@ -17,11 +17,9 @@ export default {
     },
     methods: {
         handleResize() {
-            if (window.visualViewport) {
-                const viewportHeight = window.visualViewport.height;
-                const content = document.querySelector('#content');
-                content.style.height = viewportHeight + 'px !important;';
-            }
+            const viewportHeight = window.visualViewport.height;
+            const content = document.querySelector('#content');
+            content.style.height = viewportHeight + 'px';
         },
         handleFocus(event) {
             const element = event.target;
