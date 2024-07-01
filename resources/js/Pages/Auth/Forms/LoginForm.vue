@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         handleFocus(event) {
-            const element = event.target;
+            const element = document.getElementById('form-auth');
             this.$nextTick(() => {
                 setTimeout(() => {
                     element.scrollIntoView({
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-    <form class="auth" @submit.prevent="formSubmit">
+    <form id="form-auth" class="auth" @submit.prevent="formSubmit">
         <h1>Вход</h1>
         <div class="inputs">
             <input
