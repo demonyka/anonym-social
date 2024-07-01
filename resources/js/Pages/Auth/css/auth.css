@@ -5,21 +5,25 @@ form.auth {
     flex-direction: column;
     gap: 20px;
 }
-form.auth.button.primary {
+
+form.auth button.primary {
     width: 100%;
 }
-form.auth.h1 {
+
+form.auth h1 {
     font-weight: 700;
     font-size: 18px;
 }
-form.auth.div.inputs {
+
+form.auth div.inputs {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
-form.auth.div.inputs.input {
+
+form.auth div.inputs input {
     width: 100%;
     background-color: var(--bg-color);
     border: none;
@@ -28,13 +32,17 @@ form.auth.div.inputs.input {
     outline: 1px solid transparent;
     outline-offset: 2px;
 }
-form.auth.div.inputs.input::placeholder {
+
+form.auth div.inputs input::placeholder {
     color: var(--secondary-color);
     font-weight: 600;
 }
-form.auth.div.inputs.input:focus, input:hover {
+
+form.auth div.inputs input:focus,
+form.auth div.inputs input:hover {
     outline-color: var(--bg-color);
 }
+
 .auth.block {
     padding: 80px 60px;
     border-radius: 20px;
@@ -42,13 +50,15 @@ form.auth.div.inputs.input:focus, input:hover {
     justify-content: space-between;
     width: 750px;
 }
-.auth.block.div.logo {
+
+.auth.block div.logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-.auth.block.div.logo.img.logo {
+
+.auth.block div.logo img.logo {
     width: 160px;
     height: 160px;
     user-select: none;
@@ -58,19 +68,23 @@ form.auth.div.inputs.input:focus, input:hover {
     -webkit-user-drag: none;
     pointer-events: none;
 }
-.auth.block.div.logo.p.info {
+
+.auth.block div.logo p.info {
     max-width: 250px;
     text-align: center;
 }
-.auth.block.div.logo.p.info.span.head {
+
+.auth.block div.logo p.info span.head {
     font-weight: 700;
 }
+
 @media screen and (max-width: 750px) {
     .auth.block {
         width: auto !important;
         padding: 40px;
     }
-    div.logo {
+
+    .auth.block div.logo {
         display: none !important;
     }
 }
