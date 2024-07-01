@@ -13,8 +13,8 @@ export default {
 <style scoped>
     #content {
         position: fixed;
-        width: 100vw;
-        height: 100vh;
+        width: 100dvw;
+        height: 100dvh;
         left: 0;
         top: 0;
         overflow-x: hidden;
