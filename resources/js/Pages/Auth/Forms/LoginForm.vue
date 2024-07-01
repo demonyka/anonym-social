@@ -19,10 +19,12 @@ export default {
         handleFocus(event) {
             const element = event.target;
             this.$nextTick(() => {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                setTimeout(() => {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
             });
         },
         formSubmit() {
