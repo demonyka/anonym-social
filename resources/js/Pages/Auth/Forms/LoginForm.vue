@@ -16,11 +16,6 @@ export default {
         }
     },
     methods: {
-        handleResize() {
-            const viewportHeight = window.visualViewport.height;
-            const content = document.querySelector('#content');
-            content.style.height = viewportHeight + 'px';
-        },
         handleFocus(event) {
             const element = event.target;
             this.$nextTick(() => {
@@ -29,7 +24,6 @@ export default {
                         behavior: 'smooth',
                         block: 'center'
                     });
-                    this.handleResize();
                 }, 300);
             });
         },
@@ -37,14 +31,6 @@ export default {
 
         }
     },
-    mounted() {
-        window.addEventListener('resize', this.handleResize);
-        window.addEventListener('orientationchange', this.handleResize);
-    },
-    beforeDestroy() {
-        window.removeEventListener('resize', this.handleResize);
-        window.removeEventListener('orientationchange', this.handleResize);
-    }
 }
 </script>
 
@@ -54,14 +40,12 @@ export default {
         <div class="inputs">
             <input
                 @focus="handleFocus"
-                @blur="handleResize"
                 v-model="form.login"
                 placeholder="Логин"
                 required
             >
             <input
                 @focus="handleFocus"
-                @blur="handleResize"
                 v-model="form.password"
                 placeholder="Пароль"
                 required
