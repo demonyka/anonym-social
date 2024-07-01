@@ -26,10 +26,10 @@ export default {
         },
     },
     mounted() {
-        window.addEventListener('scroll', this.handleFocus);
+        document.addEventListener('scroll', this.handleFocus);
     },
     beforeUnmount() {
-        window.removeEventListener('scroll', this.handleFocus);
+        document.removeEventListener('scroll', this.handleFocus);
     }
 }
 </script>
