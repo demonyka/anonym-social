@@ -24,12 +24,6 @@ export default {
                 }, 300);
             });
         },
-    },
-    mounted() {
-        document.addEventListener('scroll', this.handleFocus);
-    },
-    beforeUnmount() {
-        document.removeEventListener('scroll', this.handleFocus);
     }
 }
 </script>
