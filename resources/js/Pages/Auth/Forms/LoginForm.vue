@@ -16,17 +16,6 @@ export default {
         }
     },
     methods: {
-        handleFocus(event) {
-            const element = document.getElementById('form-auth');
-            this.$nextTick(() => {
-                setTimeout(() => {
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                }, 300);
-            });
-        },
         formSubmit() {
 
         }
@@ -39,13 +28,13 @@ export default {
         <h1>Вход</h1>
         <div class="inputs">
             <input
-                @focus="handleFocus"
+                @focus="$emit('focused')"
                 v-model="form.login"
                 placeholder="Логин"
                 required
             >
             <input
-                @focus="handleFocus"
+                @focus="$emit('focused')"
                 v-model="form.password"
                 placeholder="Пароль"
                 required

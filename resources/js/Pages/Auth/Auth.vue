@@ -11,6 +11,25 @@ export default {
         LoginForm,
         Content,
         Head
+    },
+    methods: {
+        handleFocus() {
+            const element = document.getElementById('forms');
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+            });
+        },
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleFocus);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleFocus);
     }
 }
 </script>
@@ -21,8 +40,8 @@ export default {
         <div class="center">
             <div class="auth block">
                 <AuthLogoInfo/>
-                <div>
-                    <LoginForm/>
+                <div id="forms">
+                    <LoginForm @focused="handleFocus"/>
                 </div>
             </div>
         </div>
