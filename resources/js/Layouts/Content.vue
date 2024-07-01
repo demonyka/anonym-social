@@ -17,8 +17,7 @@ export default {
         height: 100dvh;
         left: 0;
         top: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
         display: flex;
         align-items: center;
         flex-direction: column;

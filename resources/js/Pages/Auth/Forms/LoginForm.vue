@@ -21,7 +21,6 @@ export default {
                 const viewportHeight = window.visualViewport.height;
                 const content = document.querySelector('#content');
                 content.style.height = viewportHeight + 'px';
-                content.style.overflow = 'none';
             }
 
         },
