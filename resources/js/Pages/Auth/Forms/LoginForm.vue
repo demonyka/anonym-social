@@ -17,12 +17,13 @@ export default {
     },
     methods: {
         handleResize() {
-            let viewportHeight = window.innerHeight;
             if (window.visualViewport) {
-                viewportHeight = window.visualViewport.height;
+                const viewportHeight = window.visualViewport.height;
+                const content = document.querySelector('#content');
+                content.style.height = viewportHeight + 'px';
+                content.style.display = 'none';
             }
-            const content = document.querySelector('#content');
-            content.style.height = viewportHeight + 'px';
+
         },
         handleFocus(event) {
             const element = event.target;
