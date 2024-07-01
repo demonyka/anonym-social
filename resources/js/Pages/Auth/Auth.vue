@@ -11,9 +11,6 @@ export default {
         LoginForm,
         Content,
         Head
-    },
-    mounted() {
-        document.body.style.overflow = 'hidden';
     }
 }
 </script>
