@@ -29,9 +29,9 @@ export default {
                         behavior: 'smooth',
                         block: 'center'
                     });
+                    this.handleResize();
                 }, 300);
             });
-            this.handleResize();
         },
         formSubmit() {
 
