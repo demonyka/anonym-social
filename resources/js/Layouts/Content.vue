@@ -29,20 +29,17 @@ export default {
 </script>
 
 <template>
-    <transition-group>
-        <div style="position: absolute; top: 20px; max-width: 300px">
-            <transition-group name="slide" tag="div">
-                <ModalMessage
-                    v-for="(value, key) in $page.props.errors"
-                    :key="key"
-                    :text="value"
-                    type="error"
-                    @click="removeError(key)"
-                />
-            </transition-group>
-
-        </div>
-    </transition-group>
+    <div style="position: absolute; top: 20px; width: 100vw; max-height: 100vh; overflow: auto; display: flex; flex-direction: column; align-items: center">
+        <transition-group name="slide" tag="div">
+            <ModalMessage
+                v-for="(value, key) in $page.props.errors"
+                :key="key"
+                :text="value"
+                type="error"
+                @click="removeError(key)"
+            />
+        </transition-group>
+    </div>
     <slot/>
 </template>
 

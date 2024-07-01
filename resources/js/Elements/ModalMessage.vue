@@ -50,7 +50,8 @@ export default {
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        width: 100%;
+        width: 250px;
+        max-width: 250px;
         z-index: 100;
         box-shadow: var(--block-shadow);
         cursor: pointer;

@@ -10,7 +10,7 @@ export default {
     data() {
         return {
             form: useForm({
-                login: '',
+                username: '',
                 password: '',
                 password_confirmation: ''
             })
@@ -18,7 +18,11 @@ export default {
     },
     methods: {
         formSubmit() {
-
+            this.form.post(route('auth.register'), {
+                onError: params => {
+                    this.form.reset('password_confirmation')
+                }
+            })
         }
     },
 }
@@ -30,29 +34,31 @@ export default {
         <div class="inputs">
             <input
                 @focus="$emit('focused')"
-                v-model="form.login"
+                v-model="form.username"
                 placeholder="Логин"
-                required
+                :readonly="form.processing"
             >
             <input
                 @focus="$emit('focused')"
                 v-model="form.password"
                 placeholder="Пароль"
-                required
                 type="password"
+                :readonly="form.processing"
             >
             <input
                 @focus="$emit('focused')"
                 v-model="form.password_confirmation"
-                placeholder="Подтвердите пароль"
-                required
+                placeholder="Подтверждение пароля"
                 type="password"
+                :readonly="form.processing"
             >
-            <PrimaryButton type="submit">
+            <PrimaryButton type="submit" :disabled="form.processing">
                 Создать аккаунт
             </PrimaryButton>
             <div class="inputs" style="gap: 5px">
-                <button type="button" class="text-button" @click="$emit('login')">Войти</button>
+                <button :disabled="form.processing" type="button" class="text-button" @click="$emit('login')">
+                    Войти
+                </button>
             </div>
         </div>
     </form>

@@ -34,8 +34,8 @@ export default {
         justify-content: center;
     }
     button span.loader {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         border: 3px solid var(--primary-color);
         border-bottom-color: transparent;
     }
