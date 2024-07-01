@@ -4,36 +4,36 @@ form.auth {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    button.primary {
-        width: 100%;
-    }
-    h1 {
-        font-weight: 700;
-        font-size: 18px;
-    }
-    div.inputs {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        input {
-            width: 100%;
-            background-color: var(--bg-color);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            outline: 1px solid transparent;
-            outline-offset: 2px;
-        }
-        input::placeholder {
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-        input:focus, input:hover {
-            outline-color: var(--bg-color);
-        }
-    }
+}
+form.auth.button.primary {
+    width: 100%;
+}
+form.auth.h1 {
+    font-weight: 700;
+    font-size: 18px;
+}
+form.auth.div.inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+form.auth.div.inputs.input {
+    width: 100%;
+    background-color: var(--bg-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+}
+form.auth.div.inputs.input::placeholder {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+form.auth.div.inputs.input:focus, input:hover {
+    outline-color: var(--bg-color);
 }
 .auth.block {
     padding: 80px 60px;
@@ -41,28 +41,28 @@ form.auth {
     flex-direction: row;
     justify-content: space-between;
     width: 750px;
-    div.logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        img.logo {
-            width: 160px;
-            height: 160px;
-            user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -moz-user-select: none;
-            -webkit-user-drag: none;
-            pointer-events: none;
-        }
-        p.info {
-            max-width: 250px;
-            text-align: center;
-            span.head {
-                font-weight: 700;
-            }
-        }
+}
+.auth.block.div.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.auth.block.div.logo.img.logo {
+    width: 160px;
+    height: 160px;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+.auth.block.div.logo.p.info {
+    max-width: 250px;
+    text-align: center;
+    span.head {
+        font-weight: 700;
     }
 }
 @media screen and (max-width: 750px) {
