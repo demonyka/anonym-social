@@ -20,9 +20,8 @@ export default {
             if (window.visualViewport) {
                 const viewportHeight = window.visualViewport.height;
                 const content = document.querySelector('#content');
-                content.style.height = viewportHeight + 'px';
+                content.style.height = viewportHeight + 'px !important;';
             }
-
         },
         handleFocus(event) {
             const element = event.target;
