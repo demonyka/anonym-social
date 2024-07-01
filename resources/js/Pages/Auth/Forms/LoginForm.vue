@@ -16,6 +16,11 @@ export default {
         }
     },
     methods: {
+        handleResize() {
+            const currentHeight = window.innerHeight;
+            const content = document.querySelector('#content');
+            content.style.height = currentHeight + 'px';
+        },
         handleFocus(event) {
             const element = event.target;
             this.$nextTick(() => {
@@ -26,6 +31,7 @@ export default {
                     });
                 }, 300);
             });
+            this.handleResize();
         },
         formSubmit() {
 
@@ -40,12 +46,14 @@ export default {
         <div class="inputs">
             <input
                 @focus="handleFocus"
+                @blur="handleResize"
                 v-model="form.login"
                 placeholder="Логин"
                 required
             >
             <input
                 @focus="handleFocus"
+                @blur="handleResize"
                 v-model="form.password"
                 placeholder="Пароль"
                 required
