@@ -17,9 +17,12 @@ export default {
     },
     methods: {
         handleResize() {
-            const currentHeight = window.innerHeight;
+            let viewportHeight = window.innerHeight;
+            if (window.visualViewport) {
+                viewportHeight = window.visualViewport.height;
+            }
             const content = document.querySelector('#content');
-            content.style.height = currentHeight + 'px';
+            content.style.height = viewportHeight + 'px';
         },
         handleFocus(event) {
             const element = event.target;
@@ -36,6 +39,14 @@ export default {
         formSubmit() {
 
         }
+    },
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
+        window.addEventListener('orientationchange', this.handleResize);
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('orientationchange', this.handleResize);
     }
 }
 </script>
