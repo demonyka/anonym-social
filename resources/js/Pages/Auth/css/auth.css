@@ -81,10 +81,23 @@ form.auth div.inputs input:hover {
     font-weight: 700;
 }
 
+#forms {
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px !important;
+}
+
 @media screen and (max-width: 750px) {
     .auth.block {
         width: auto !important;
-        padding: 40px;
+        padding: 20px 40px;
+        height: 300px !important;
+        max-height: 300px !important;
+        min-height: 300px !important;
     }
 
     .auth.block div.logo {

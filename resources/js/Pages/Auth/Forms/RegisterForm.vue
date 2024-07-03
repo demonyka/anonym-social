@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         formSubmit() {
-            this.form.post(route('auth.register'), {
+            this.form.put(route('auth.register'), {
                 onError: params => {
                     this.form.reset('password_confirmation')
                 }

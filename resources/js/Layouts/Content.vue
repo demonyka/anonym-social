@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-    <div style="position: absolute; top: 20px; width: 100vw; max-height: 100vh; overflow: auto; display: flex; flex-direction: column; align-items: center">
+    <div class="messages">
         <transition-group name="slide" tag="div">
             <ModalMessage
                 v-for="(value, key) in $page.props.errors"
@@ -44,5 +44,16 @@ export default {
 </template>
 
 <style scoped>
-
+    .messages {
+        position: absolute;
+        width: 300px;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(3px);
+        z-index: 100;
+    }
 </style>

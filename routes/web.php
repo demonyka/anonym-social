@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Profile\ProfileController;
 
 Route::get('/', function () {
     $user = auth()->user();
@@ -15,13 +16,13 @@ Route::get('/', function () {
 Route::prefix('auth')->middleware('guest')->group(function () {
     Route::get('/', [AuthController::class, 'view'])->name('auth.view');
     Route::post('/login', [LoginController::class, 'login'])->name('auth.login');
-    Route::post('/register', [RegisterController::class, 'register'])->name('auth.register');
+    Route::put('/register', [RegisterController::class, 'register'])->name('auth.register');
 });
 
 Route::middleware('auth')->group(function () {
+    Route::any('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+
     Route::prefix('/profile')->group(function () {
-        Route::get('/{username}', function ($username) {
-            return \App\Models\User::where('username', $username)->firstOrFail();
-        })->name('profile.view');
+        Route::get('/{username}', [ProfileController::class, 'view'])->name('profile.view');
     });
 });

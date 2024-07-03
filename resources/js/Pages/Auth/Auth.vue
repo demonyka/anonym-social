@@ -5,9 +5,11 @@ import LoginForm from "@/Pages/Auth/Forms/LoginForm.vue";
 import '@/Pages/Auth/css/auth.css'
 import AuthLogoInfo from "@/Pages/Auth/Elements/AuthLogoInfo.vue";
 import RegisterForm from "@/Pages/Auth/Forms/RegisterForm.vue";
+import LightLogo from "@/Pages/Auth/Elements/LightLogo.vue";
 export default {
     name: "Auth",
     components: {
+        LightLogo,
         RegisterForm,
         AuthLogoInfo,
         LoginForm,
@@ -64,13 +66,5 @@ export default {
 </template>
 
 <style scoped>
-    #forms {
-        height: auto;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 250px !important;
-    }
+
 </style>

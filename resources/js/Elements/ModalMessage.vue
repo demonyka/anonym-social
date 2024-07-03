@@ -41,17 +41,16 @@ export default {
 <style scoped>
     .message-block {
         position: relative;
-        margin-bottom: 10px;
-        padding: 15px 20px;
-        background-color: #57a842;
+        margin-top: 10px;
+        padding: 15px;
+        background-color: #57a84280;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        width: 250px;
-        max-width: 250px;
+        width: 100%;
         z-index: 100;
         box-shadow: var(--block-shadow);
         cursor: pointer;
